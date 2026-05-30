@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 820" font-family="Arial, sans-serif">
+  <style>
+    .pin-label { font-size: 12px; font-weight: bold; }
+    .board-label { font-size: 11px; fill: #666; }
+    .title { font-size: 18px; font-weight: bold; }
+    .subtitle { font-size: 13px; fill: #888; }
+  </style>
+
+  <!-- Background -->
+  <rect width="620" height="820" fill="#fafafa" rx="8"/>
+
+  <!-- Title -->
+  <text x="310" y="35" text-anchor="middle" class="title">Lolin S2 Mini 引脚图 — Sesame Robot 接线</text>
+
+  <!-- Board body -->
+  <rect x="200" y="55" width="220" height="730" fill="#1a1a2e" rx="10" stroke="#333" stroke-width="2"/>
+
+  <!-- USB-C port -->
+  <rect x="275" y="770" width="70" height="20" fill="#555" rx="3" stroke="#777" stroke-width="1"/>
+  <text x="310" y="805" text-anchor="middle" font-size="10" fill="#888">USB-C</text>
+
+  <!-- Board label -->
+  <text x="310" y="90" text-anchor="middle" font-size="14" fill="#aaa" font-weight="bold">S2 Mini</text>
+  <text x="310" y="108" text-anchor="middle" font-size="10" fill="#777">ESP32-S2</text>
+
+  <!-- Legend -->
+  <rect x="30" y="55" width="14" height="14" fill="#e74c3c" rx="2"/>
+  <text x="50" y="66" font-size="11">电源 (5V)</text>
+  <rect x="30" y="75" width="14" height="14" fill="#2c3e50" rx="2"/>
+  <text x="50" y="86" font-size="11">地线 (GND)</text>
+  <rect x="30" y="95" width="14" height="14" fill="#27ae60" rx="2"/>
+  <text x="50" y="106" font-size="11">舵机信号 (M0-M7)</text>
+  <rect x="30" y="115" width="14" height="14" fill="#2980b9" rx="2"/>
+  <text x="50" y="126" font-size="11">OLED (I2C)</text>
+  <rect x="30" y="135" width="14" height="14" fill="#bdc3c7" rx="2"/>
+  <text x="50" y="146" font-size="11">未使用</text>
+
+  <!-- Left side pins (top to bottom) -->
+  <!-- Pin spacing: start at y=140, spacing=33px -->
+
+  <!-- Left pin 1: 3V3 (unused) -->
+  <rect x="190" y="137" width="20" height="8" fill="#bdc3c7"/>
+  <text x="180" y="145" text-anchor="end" class="board-label">3V3</text>
+
+  <!-- Left pin 2: GPIO 1 = M0 -->
+  <rect x="190" y="170" width="20" height="8" fill="#27ae60"/>
+  <text x="180" y="178" text-anchor="end" class="pin-label" fill="#27ae60">GPIO 1</text>
+  <text x="80" y="178" text-anchor="end" font-size="11" fill="#27ae60" font-weight="bold">M0 (R1)</text>
+
+  <!-- Left pin 3: GPIO 2 = M1 -->
+  <rect x="190" y="203" width="20" height="8" fill="#27ae60"/>
+  <text x="180" y="211" text-anchor="end" class="pin-label" fill="#27ae60">GPIO 2</text>
+  <text x="80" y="211" text-anchor="end" font-size="11" fill="#27ae60" font-weight="bold">M1 (R2)</text>
+
+  <!-- Left pin 4: GPIO 3 (unused) -->
+  <rect x="190" y="236" width="20" height="8" fill="#bdc3c7"/>
+  <text x="180" y="244" text-anchor="end" class="board-label">GPIO 3</text>
+
+  <!-- Left pin 5: GPIO 4 = M2 -->
+  <rect x="190" y="269" width="20" height="8" fill="#27ae60"/>
+  <text x="180" y="277" text-anchor="end" class="pin-label" fill="#27ae60">GPIO 4</text>
+  <text x="80" y="277" text-anchor="end" font-size="11" fill="#27ae60" font-weight="bold">M2 (L1)</text>
+
+  <!-- Left pin 6: GPIO 5 (unused) -->
+  <rect x="190" y="302" width="20" height="8" fill="#bdc3c7"/>
+  <text x="180" y="310" text-anchor="end" class="board-label">GPIO 5</text>
+
+  <!-- Left pin 7: GPIO 6 = M3 -->
+  <rect x="190" y="335" width="20" height="8" fill="#27ae60"/>
+  <text x="180" y="343" text-anchor="end" class="pin-label" fill="#27ae60">GPIO 6</text>
+  <text x="80" y="343" text-anchor="end" font-size="11" fill="#27ae60" font-weight="bold">M3 (L2)</text>
+
+  <!-- Left pin 8: GPIO 7 (unused) -->
+  <rect x="190" y="368" width="20" height="8" fill="#bdc3c7"/>
+  <text x="180" y="376" text-anchor="end" class="board-label">GPIO 7</text>
+
+  <!-- Left pin 9: GPIO 8 = M4 -->
+  <rect x="190" y="401" width="20" height="8" fill="#27ae60"/>
+  <text x="180" y="409" text-anchor="end" class="pin-label" fill="#27ae60">GPIO 8</text>
+  <text x="80" y="409" text-anchor="end" font-size="11" fill="#27ae60" font-weight="bold">M4 (R4)</text>
+
+  <!-- Left pin 10: GPIO 9 (unused) -->
+  <rect x="190" y="434" width="20" height="8" fill="#bdc3c7"/>
+  <text x="180" y="442" text-anchor="end" class="board-label">GPIO 9</text>
+
+  <!-- Left pin 11: GPIO 10 = M5 -->
+  <rect x="190" y="467" width="20" height="8" fill="#27ae60"/>
+  <text x="180" y="475" text-anchor="end" class="pin-label" fill="#27ae60">GPIO 10</text>
+  <text x="80" y="475" text-anchor="end" font-size="11" fill="#27ae60" font-weight="bold">M5 (R3)</text>
+
+  <!-- Left pin 12: GPIO 11 (unused) -->
+  <rect x="190" y="500" width="20" height="8" fill="#bdc3c7"/>
+  <text x="180" y="508" text-anchor="end" class="board-label">GPIO 11</text>
+
+  <!-- Left pin 13: GPIO 12 (unused) -->
+  <rect x="190" y="533" width="20" height="8" fill="#bdc3c7"/>
+  <text x="180" y="541" text-anchor="end" class="board-label">GPIO 12</text>
+
+  <!-- Left pin 14: GPIO 13 = M6 -->
+  <rect x="190" y="566" width="20" height="8" fill="#27ae60"/>
+  <text x="180" y="574" text-anchor="end" class="pin-label" fill="#27ae60">GPIO 13</text>
+  <text x="80" y="574" text-anchor="end" font-size="11" fill="#27ae60" font-weight="bold">M6 (L3)</text>
+
+  <!-- Left pin 15: GPIO 14 = M7 -->
+  <rect x="190" y="599" width="20" height="8" fill="#27ae60"/>
+  <text x="180" y="607" text-anchor="end" class="pin-label" fill="#27ae60">GPIO 14</text>
+  <text x="80" y="607" text-anchor="end" font-size="11" fill="#27ae60" font-weight="bold">M7 (L4)</text>
+
+  <!-- Left pin 16: GPIO 15 (unused) -->
+  <rect x="190" y="632" width="20" height="8" fill="#bdc3c7"/>
+  <text x="180" y="640" text-anchor="end" class="board-label">GPIO 15</text>
+
+  <!-- Left pin 17: GPIO 16 (unused) -->
+  <rect x="190" y="665" width="20" height="8" fill="#bdc3c7"/>
+  <text x="180" y="673" text-anchor="end" class="board-label">GPIO 16</text>
+
+  <!-- Left pin 18: 5V -->
+  <rect x="190" y="698" width="20" height="8" fill="#e74c3c"/>
+  <text x="180" y="706" text-anchor="end" class="pin-label" fill="#e74c3c">5V</text>
+  <text x="80" y="706" text-anchor="end" font-size="11" fill="#e74c3c" font-weight="bold">电源+</text>
+
+  <!-- Left pin 19: GND -->
+  <rect x="190" y="731" width="20" height="8" fill="#2c3e50"/>
+  <text x="180" y="739" text-anchor="end" class="pin-label" fill="#2c3e50">GND</text>
+  <text x="80" y="739" text-anchor="end" font-size="11" fill="#2c3e50" font-weight="bold">地线</text>
+
+  <!-- Right side pins (top to bottom) -->
+
+  <!-- Right pin 1: GND -->
+  <rect x="410" y="137" width="20" height="8" fill="#2c3e50"/>
+  <text x="440" y="145" class="pin-label" fill="#2c3e50">GND</text>
+
+  <!-- Right pin 2: 5V -->
+  <rect x="410" y="170" width="20" height="8" fill="#e74c3c"/>
+  <text x="440" y="178" class="pin-label" fill="#e74c3c">5V</text>
+
+  <!-- Right pin 3: GPIO 18 (unused) -->
+  <rect x="410" y="203" width="20" height="8" fill="#bdc3c7"/>
+  <text x="440" y="211" class="board-label">GPIO 18</text>
+
+  <!-- Right pin 4: GPIO 17 (unused) -->
+  <rect x="410" y="236" width="20" height="8" fill="#bdc3c7"/>
+  <text x="440" y="244" class="board-label">GPIO 17</text>
+
+  <!-- Right pin 5: GPIO 21 (unused) -->
+  <rect x="410" y="269" width="20" height="8" fill="#bdc3c7"/>
+  <text x="440" y="277" class="board-label">GPIO 21</text>
+
+  <!-- Right pin 6: GPIO 33 = SDA -->
+  <rect x="410" y="302" width="20" height="8" fill="#2980b9"/>
+  <text x="440" y="310" class="pin-label" fill="#2980b9">GPIO 33</text>
+  <text x="540" y="310" font-size="11" fill="#2980b9" font-weight="bold">SDA (OLED)</text>
+
+  <!-- Right pin 7: GPIO 34 (unused) -->
+  <rect x="410" y="335" width="20" height="8" fill="#bdc3c7"/>
+  <text x="440" y="343" class="board-label">GPIO 34</text>
+
+  <!-- Right pin 8: GPIO 35 = SCL -->
+  <rect x="410" y="368" width="20" height="8" fill="#2980b9"/>
+  <text x="440" y="376" class="pin-label" fill="#2980b9">GPIO 35</text>
+  <text x="540" y="376" font-size="11" fill="#2980b9" font-weight="bold">SCL (OLED)</text>
+
+  <!-- Right pin 9-15: unused -->
+  <rect x="410" y="401" width="20" height="8" fill="#bdc3c7"/>
+  <text x="440" y="409" class="board-label">GPIO 36</text>
+
+  <rect x="410" y="434" width="20" height="8" fill="#bdc3c7"/>
+  <text x="440" y="442" class="board-label">GPIO 37</text>
+
+  <rect x="410" y="467" width="20" height="8" fill="#bdc3c7"/>
+  <text x="440" y="475" class="board-label">GPIO 38</text>
+
+  <rect x="410" y="500" width="20" height="8" fill="#bdc3c7"/>
+  <text x="440" y="508" class="board-label">GPIO 39</text>
+
+  <rect x="410" y="533" width="20" height="8" fill="#bdc3c7"/>
+  <text x="440" y="541" class="board-label">GPIO 40</text>
+
+  <rect x="410" y="566" width="20" height="8" fill="#bdc3c7"/>
+  <text x="440" y="574" class="board-label">TX</text>
+
+  <rect x="410" y="599" width="20" height="8" fill="#bdc3c7"/>
+  <text x="440" y="607" class="board-label">RX</text>
+
+  <!-- Antenna area -->
+  <rect x="250" y="60" width="120" height="40" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="4,2" rx="5"/>
+  <text x="310" y="83" text-anchor="middle" font-size="9" fill="#666">WiFi 天线</text>
+
+</svg>
