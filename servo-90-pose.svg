@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" font-family="Arial, sans-serif">
+  <style>
+    .title { font-size: 20px; font-weight: bold; fill: #333; }
+    .label { font-size: 12px; fill: #666; }
+    .joint { fill: #e74c3c; }
+    .body { fill: #2c3e50; }
+    .upper-leg { stroke: #2c3e50; stroke-width: 5; fill: none; stroke-linecap: round; }
+    .lower-leg { stroke: #3498db; stroke-width: 5; fill: none; stroke-linecap: round; }
+    .foot { fill: #2ecc71; }
+    .angle-text { font-size: 11px; fill: #e74c3c; font-weight: bold; }
+    .section-title { font-size: 16px; font-weight: bold; fill: #555; }
+  </style>
+
+  <text x="400" y="30" text-anchor="middle" class="title">Sesame Robot — 90° 中立位姿</text>
+
+  <!-- ==================== FRONT VIEW ==================== -->
+  <text x="200" y="65" text-anchor="middle" class="section-title">正面看</text>
+
+  <!-- Body -->
+  <rect x="150" y="80" width="100" height="60" class="body" rx="6"/>
+  <text x="200" y="115" text-anchor="middle" fill="#fff" font-size="11">身体</text>
+
+  <!-- OLED indicator -->
+  <rect x="180" y="78" width="40" height="8" fill="#3498db" rx="2"/>
+  <text x="200" y="73" text-anchor="middle" font-size="9" fill="#3498db">OLED ▲前</text>
+
+  <!-- Left side -->
+  <!-- L1 hip joint -->
+  <circle cx="150" cy="110" r="5" class="joint"/>
+  <text x="125" y="100" class="angle-text">L1</text>
+  <!-- L1 upper leg - horizontal outward -->
+  <line x1="150" y1="110" x2="90" y2="110" class="upper-leg"/>
+  <!-- L2 knee joint -->
+  <circle cx="90" cy="110" r="5" fill="#3498db"/>
+  <text x="68" y="100" class="angle-text" fill="#3498db">L2</text>
+  <!-- L2 lower leg - vertical down -->
+  <line x1="90" y1="110" x2="90" y2="250" class="lower-leg"/>
+  <!-- L2 foot -->
+  <circle cx="90" cy="250" r="4" class="foot"/>
+
+  <!-- Right side -->
+  <!-- R1 hip joint -->
+  <circle cx="250" cy="110" r="5" class="joint"/>
+  <text x="263" y="100" class="angle-text">R1</text>
+  <!-- R1 upper leg - horizontal outward -->
+  <line x1="250" y1="110" x2="310" y2="110" class="upper-leg"/>
+  <!-- R2 knee joint -->
+  <circle cx="310" cy="110" r="5" fill="#3498db"/>
+  <text x="318" y="100" class="angle-text" fill="#3498db">R2</text>
+  <!-- R2 lower leg - vertical down -->
+  <line x1="310" y1="110" x2="310" y2="250" class="lower-leg"/>
+  <!-- R2 foot -->
+  <circle cx="310" cy="250" r="4" class="foot"/>
+
+  <!-- Annotations -->
+  <line x1="90" y1="130" x2="90" y2="240" stroke="#3498db" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="200" y="285" text-anchor="middle" class="label">上腿水平伸出，下腿垂直向下（L形）</text>
+
+
+  <!-- ==================== SIDE VIEW ==================== -->
+  <text x="580" y="65" text-anchor="middle" class="section-title">右侧面看</text>
+
+  <!-- Body -->
+  <rect x="480" y="80" width="200" height="60" class="body" rx="6"/>
+  <text x="580" y="115" text-anchor="middle" fill="#fff" font-size="11">身体</text>
+
+  <!-- Direction -->
+  <text x="492" y="75" font-size="10" fill="#888">前</text>
+  <text x="668" y="75" font-size="10" fill="#888">后</text>
+
+  <!-- Front leg -->
+  <!-- R1 hip joint -->
+  <circle cx="480" cy="110" r="5" class="joint"/>
+  <text x="465" y="100" class="angle-text">R1</text>
+  <!-- R1 upper leg - horizontal outward -->
+  <line x1="480" y1="110" x2="420" y2="110" class="upper-leg"/>
+  <!-- R2 knee joint -->
+  <circle cx="420" cy="110" r="5" fill="#3498db"/>
+  <text x="402" y="100" class="angle-text" fill="#3498db">R2</text>
+  <!-- R2 lower leg - vertical down -->
+  <line x1="420" y1="110" x2="420" y2="250" class="lower-leg"/>
+  <!-- R2 foot -->
+  <circle cx="420" cy="250" r="4" class="foot"/>
+
+  <!-- Rear leg -->
+  <!-- R4 hip joint -->
+  <circle cx="680" cy="110" r="5" class="joint"/>
+  <text x="688" y="100" class="angle-text">R4</text>
+  <!-- R4 upper leg - horizontal outward -->
+  <line x1="680" y1="110" x2="740" y2="110" class="upper-leg"/>
+  <!-- R3 knee joint -->
+  <circle cx="740" cy="110" r="5" fill="#3498db"/>
+  <text x="748" y="100" class="angle-text" fill="#3498db">R3</text>
+  <!-- R3 lower leg - vertical down -->
+  <line x1="740" y1="110" x2="740" y2="250" class="lower-leg"/>
+  <!-- R3 foot -->
+  <circle cx="740" cy="250" r="4" class="foot"/>
+
+  <text x="580" y="285" text-anchor="middle" class="label">前后腿对称，L形</text>
+
+
+  <!-- ==================== 3D ISOMETRIC VIEW ==================== -->
+  <text x="400" y="340" text-anchor="middle" class="section-title">立体示意（90°时）</text>
+
+  <!-- Body (isometric) -->
+  <polygon points="400,360 500,390 400,420 300,390" fill="#2c3e50" stroke="#1a252f" stroke-width="2"/>
+  <text x="400" y="395" text-anchor="middle" fill="#fff" font-size="10">身体</text>
+
+  <!-- OLED -->
+  <line x1="340" y1="375" x2="360" y2="380" stroke="#3498db" stroke-width="3"/>
+
+  <!-- Front label -->
+  <text x="400" y="435" text-anchor="middle" font-size="10" fill="#888">▲ 前</text>
+
+  <!-- R1 front-right -->
+  <circle cx="500" cy="390" r="4" class="joint"/>
+  <line x1="500" y1="390" x2="550" y2="405" class="upper-leg"/>
+  <circle cx="550" cy="405" r="4" fill="#3498db"/>
+  <line x1="550" y1="405" x2="550" y2="520" class="lower-leg"/>
+  <circle cx="550" cy="520" r="3" class="foot"/>
+  <text x="558" y="400" class="angle-text">R1</text>
+  <text x="558" y="418" class="angle-text" fill="#3498db">R2</text>
+
+  <!-- L1 front-left -->
+  <circle cx="300" cy="390" r="4" class="joint"/>
+  <line x1="300" y1="390" x2="250" y2="405" class="upper-leg"/>
+  <circle cx="250" cy="405" r="4" fill="#3498db"/>
+  <line x1="250" y1="405" x2="250" y2="520" class="lower-leg"/>
+  <circle cx="250" cy="520" r="3" class="foot"/>
+  <text x="228" y="400" class="angle-text">L1</text>
+  <text x="228" y="418" class="angle-text" fill="#3498db">L2</text>
+
+  <!-- R4 rear-right -->
+  <circle cx="460" cy="410" r="4" class="joint"/>
+  <line x1="460" y1="410" x2="510" y2="425" class="upper-leg"/>
+  <circle cx="510" cy="425" r="4" fill="#3498db"/>
+  <line x1="510" y1="425" x2="510" y2="540" class="lower-leg"/>
+  <circle cx="510" cy="540" r="3" class="foot"/>
+  <text x="518" y="422" class="angle-text">R4</text>
+  <text x="518" y="438" class="angle-text" fill="#3498db">R3</text>
+
+  <!-- L4 rear-left -->
+  <circle cx="340" cy="410" r="4" class="joint"/>
+  <line x1="340" y1="410" x2="290" y2="425" class="upper-leg"/>
+  <circle cx="290" cy="425" r="4" fill="#3498db"/>
+  <line x1="290" y1="425" x2="290" y2="540" class="lower-leg"/>
+  <circle cx="290" cy="540" r="3" class="foot"/>
+  <text x="268" y="422" class="angle-text">L4</text>
+  <text x="268" y="438" class="angle-text" fill="#3498db">L3</text>
+
+  <!-- Legend -->
+  <circle cx="40" cy="460" r="4" class="joint"/>
+  <text x="52" y="464" class="label">髋关节 90° → 上腿水平</text>
+  <circle cx="40" cy="485" r="4" fill="#3498db"/>
+  <text x="52" y="489" class="label">膝关节 90° → 下腿垂直</text>
+  <line x1="35" y1="505" x2="35" y2="525" class="upper-leg"/>
+  <text x="52" y="519" class="label">上腿（深色）</text>
+  <line x1="35" y1="530" x2="35" y2="550" class="lower-leg"/>
+  <text x="52" y="544" class="label">下腿（蓝色）</text>
+  <circle cx="40" cy="565" r="3" class="foot"/>
+  <text x="52" y="569" class="label">脚（绿色）</text>
+
+</svg>

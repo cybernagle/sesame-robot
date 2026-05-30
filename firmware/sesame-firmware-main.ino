@@ -18,9 +18,9 @@
 // --- Station Mode Configuration (Optional) ---
 // Set these to connect to your home/office WiFi network
 // Leave NETWORK_SSID empty to disable station mode
-#define NETWORK_SSID ""  // Your WiFi network name
-#define NETWORK_PASS ""  // Your WiFi password
-#define ENABLE_NETWORK_MODE false  // Set to true to enable network connection attempts
+#define NETWORK_SSID "CU_Z7xh"  // Your WiFi network name
+#define NETWORK_PASS "8pj6dxwq"  // Your WiFi password
+#define ENABLE_NETWORK_MODE true  // Set to true to enable network connection attempts
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
@@ -89,9 +89,8 @@ Servo servos[8];
 // Sesame Distro Board Pinout
 //const int servoPins[8] = {15, 2, 23, 19, 4, 16, 17, 18};
 
-// Lolin S2 Mini Pinout (custom wiring)
-// GPIO 33, 35, 37 disabled (PSRAM occupied), using dummy pins that won't interfere
-const int servoPins[8] = {18, -1, 9, 7, 5, 3, -1, -1};
+// Lolin S2 Mini Pinout (custom wiring, remapped to physical positions)
+const int servoPins[8] = {9, 35, 18, 3, 7, 37, 5, 33};
 
 // Subtrim values for each servo (offset in degrees)
 int8_t servoSubtrim[8] = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -766,8 +765,12 @@ void updateIdleBlink() {
 }
 
 // ====== HELPERS ======
-void setServoAngle(uint8_t channel, int angle) { 
+void setServoAngle(uint8_t channel, int angle) {
   if (channel < 8) {
+    // R1(0), R2(1), L1(2) are physically inverted
+    if (channel == 0 || channel == 1 || channel == 2) {
+      angle = 180 - angle;
+    }
     int adjustedAngle = constrain(angle + servoSubtrim[channel], 0, 180);
     servos[channel].write(adjustedAngle);
     delayWithFace(motorCurrentDelay);
