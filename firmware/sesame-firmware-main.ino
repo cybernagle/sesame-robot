@@ -64,6 +64,13 @@ bool idleBlinkActive = false;
 unsigned long nextIdleBlinkMs = 0;
 uint8_t idleBlinkRepeatsLeft = 0;
 
+// Random idle pose
+unsigned long nextRandomPoseMs = 0;
+const unsigned long RANDOM_POSE_MIN_MS = 720000UL;  // 12 min
+const unsigned long RANDOM_POSE_MAX_MS = 1080000UL; // 18 min
+const uint8_t randomPoseCount = 8;
+const char* const randomPoses[] = {"wave", "bow", "dance", "cute", "shrug", "freaky", "shake", "worm"};
+
 // WiFi Info Scrolling
 unsigned long lastInputTime = 0;
 bool firstInputReceived = false;
@@ -89,7 +96,7 @@ Servo servos[8];
 // Sesame Distro Board Pinout
 //const int servoPins[8] = {15, 2, 23, 19, 4, 16, 17, 18};
 
-// Lolin S2 Mini Pinout (custom wiring, remapped to physical positions)
+// Lolin S2 Mini Pinout (custom wiring)
 const int servoPins[8] = {9, 35, 18, 3, 7, 37, 5, 33};
 
 // Subtrim values for each servo (offset in degrees)
@@ -487,6 +494,12 @@ void loop() {
   updateIdleBlink();
   updateWifiInfoScroll();
 
+  // Random idle pose
+  if (idleActive && currentCommand == "" && millis() >= nextRandomPoseMs) {
+    currentCommand = randomPoses[random(0, randomPoseCount)];
+    nextRandomPoseMs = millis() + random(RANDOM_POSE_MIN_MS, RANDOM_POSE_MAX_MS);
+  }
+
   if (currentCommand != "") {
     String cmd = currentCommand;
     if (cmd == "forward") runWalkPose();
@@ -731,6 +744,7 @@ void enterIdle() {
   idleBlinkRepeatsLeft = 0;
   setFaceWithMode("idle", FACE_ANIM_BOOMERANG);
   scheduleNextIdleBlink(3000, 7000);
+  nextRandomPoseMs = millis() + random(RANDOM_POSE_MIN_MS, RANDOM_POSE_MAX_MS);
 }
 
 void exitIdle() {
@@ -767,15 +781,20 @@ void updateIdleBlink() {
 // ====== HELPERS ======
 void setServoAngle(uint8_t channel, int angle) {
   if (channel < 8) {
-    // R1(0), R2(1), L1(2) are physically inverted
-    if (channel == 0 || channel == 1 || channel == 2) {
-      angle = 180 - angle;
-    }
     int adjustedAngle = constrain(angle + servoSubtrim[channel], 0, 180);
     servos[channel].write(adjustedAngle);
     delayWithFace(motorCurrentDelay);
   }
 }
+
+// ====== SEMANTIC LAYER (implementation) ======
+void moveJoint(Leg leg, Joint joint, int offset) {
+  const ServoConfig& c = legConfig[leg][joint];
+  int actual = c.stand + offset * c.direction;
+  actual = constrain(actual, c.safeMin, c.safeMax);
+  setServoAngle(c.channel, actual);
+}
+// ====== END SEMANTIC LAYER ======
 
 bool pressingCheck(String cmd, int ms) {
   unsigned long start = millis();
